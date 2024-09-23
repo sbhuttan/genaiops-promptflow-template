@@ -28,4 +28,3 @@ evaluators:
     mappings:
       ground_truth: "${data.results}"
       entities: "${run.outputs.entities}"
-
