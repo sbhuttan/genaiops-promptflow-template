@@ -81,7 +81,7 @@ pipeline {
                     az role assignment create --assignee $endpoint_principal --role "AzureML Data Scientist" --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP_NAME/providers/Microsoft.MachineLearningServices/workspaces/$WORKSPACE_NAME"
                     
                     auth_type=$(az keyvault show -n $KEY_VAULT_NAME  -g $RESOURCE_GROUP_NAME --query "properties.enableRbacAuthorization")
-                    if [[ -z "$auth_type" ]]; then
+                    if [[ "$auth_type" = true ]]; then
                         echo "assigning RBAC permission"
                         az role assignment create --assignee $endpoint_principal --role "Key Vault Reader" --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourcegroups/$RESOURCE_GROUP_NAME/providers/Microsoft.KeyVault/vaults/$KEY_VAULT_NAME"
                     else

@@ -67,7 +67,7 @@ steps:
       
       echo "assigning permissions to Principal to Key vault.."
       auth_type=$(az keyvault show -n $KEY_VAULT_NAME  -g $RESOURCE_GROUP_NAME --query "properties.enableRbacAuthorization")
-      if [[ -z "$auth_type" ]]; then
+      if [[ "$auth_type" = true ]]; then
           echo "assigning RBAC permission"
           az role assignment create --assignee $(read_endpoint_principal.ENDPOINT_PRINCIPAL) --role "Key Vault Reader" --scope "/subscriptions/${{ parameters.SUBSCRIPTION_ID }}/resourcegroups/$RESOURCE_GROUP_NAME/providers/Microsoft.KeyVault/vaults/$KEY_VAULT_NAME"
       else
