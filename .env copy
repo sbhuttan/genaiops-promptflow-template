@@ -1,0 +1,16 @@
+RESOURCE_GROUP_NAME="rg-promptflow-template-dev"
+WORKSPACE_NAME="sample-workspace-dev"
+KEY_VAULT_NAME="kv-promptflow-dev"
+SUBSCRIPTION_ID="8a812f38-b3ee-4f37-9f7c-7b6347b27380"
+
+AZURE_OPENAI_API_KEY="216e28c0ea3a4f52b6372b9637eb74c3"
+AZURE_OPENAI_ENDPOINT="https://openai-demo-0824.openai.azure.com"
+
+# MODEL_CONFIG_AZURE_ENDPOINT=aml-endpoint-llmops-demo
+# MODEL_CONFIG_API_KEY=
+MAX_TOTAL_TOKEN=4096
+
+AOAI_API_KEY="216e28c0ea3a4f52b6372b9637eb74c3"
+AOAI_API_BASE="https://openai-demo-0824.openai.azure.com"
+
+APPLICATIONINSIGHTS_CONNECTION_STRING=
